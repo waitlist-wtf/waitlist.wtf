@@ -54,7 +54,7 @@ export default function Home() {
         >
           <h1
             style={{
-              marginBottom: '40px',
+              marginBottom: '10px',
               textAlign: 'center',
               marginTop: '100px',
             }}

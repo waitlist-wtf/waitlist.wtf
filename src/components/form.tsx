@@ -110,7 +110,7 @@ export default function NewsLetterSignUpForm() {
       </label>
       <div
         style={{
-          margin: '20px 0',
+          margin: '30px 0 20px 0',
         }}
       >
         <Input
