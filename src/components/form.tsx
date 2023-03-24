@@ -58,7 +58,7 @@ export default function NewsLetterSignUpForm() {
       >
         We have started the development of waitlist.wtf
         <br />
-        it will be awailable soon
+        it will be available soon
         <br />{' '}
         <span style={{ color: '#333', fontWeight: 'bold', fontSize: '18px' }}>
           So, join the waitlist of waitlist.wtf first
