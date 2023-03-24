@@ -11,14 +11,13 @@ export default async function handler(
 ) {
   const address = req.body.address;
   const email = req.body.email;
-  if (!address) {
-    return res.status(400).json({ error: 'Wallet address is required' });
-  }
-  // test eth address format
-  const regex = /^0x[a-fA-F0-9]{40}$/;
+  if (address) {
+    // test eth address format
+    const regex = /^0x[a-fA-F0-9]{40}$/;
 
-  if (!regex.test(address)) {
-    return res.status(400).json({ error: 'Invalid wallet address' });
+    if (!regex.test(address)) {
+      return res.status(400).json({ error: 'Invalid wallet address' });
+    }
   }
 
   const data = await notionServer.createWallet(address, email);
