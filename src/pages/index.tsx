@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Script from 'next/script';
 import NewsLetterSignUpForm from '../components/form';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { Tooltip } from '@nextui-org/react';
 import { Text } from '@nextui-org/react';
 const inter = Inter({ subsets: ['latin'] });
@@ -142,6 +142,7 @@ A product that quickly joins the waitlist of all ai products, https://waitlist.w
 =============
 It is desperate that the website function has not yet been developed. You need to apply to join the waitlist of waitlist.wtf. They will notify you when the development is completed 😂😂`
                 );
+                toast.success('Copied to clipboard successfully!');
               }}
             >
               <Tooltip content="Copy marketing spread slogan" color={'success'}>
