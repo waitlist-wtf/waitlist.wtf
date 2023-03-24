@@ -88,160 +88,25 @@ export default function Home() {
           style={{
             width: '300px',
             display: 'flex',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
+            alignItems: 'center',
             flexDirection: 'column',
+            marginBottom: '100px',
           }}
         >
           <div
             style={{
-              marginTop: '80px',
-              fontSize: '20px',
+              color: '#333',
               fontWeight: 'bold',
+              fontSize: '18px',
+              lineHeight: '50px',
             }}
           >
-            Working Progress
+            Or try our other product
           </div>
-          <div
-            style={{
-              margin: '20px 0',
-              fontSize: '14px',
-              color: '#666',
-              lineHeight: '1.5',
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  color: '#333',
-                  fontSize: '16px',
-                }}
-              >
-                Step 1 (done):
-              </span>
-            </div>
-            <div
-              style={{
-                color: '#999',
-                fontSize: '16px',
-              }}
-            >
-              2023-03-24
-            </div>
-            <div
-              style={{
-                color: '#666',
-                fontSize: '16px',
-              }}
-            >
-              Make code opensource...
-            </div>
-          </div>
-          <div
-            style={{
-              margin: '20px 0',
-              fontSize: '14px',
-              color: '#666',
-              lineHeight: '1.5',
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  color: '#333',
-                  fontSize: '16px',
-                }}
-              >
-                Step 2:
-              </span>
-            </div>
-            <div
-              style={{
-                color: '#999',
-                fontSize: '16px',
-              }}
-            >
-              2023-03-25
-            </div>
-            <div
-              style={{
-                color: '#666',
-                fontSize: '16px',
-              }}
-            >
-              Start project and collecting requirements...
-            </div>
-          </div>
-
-          <div
-            style={{
-              margin: '20px 0',
-              fontSize: '14px',
-              color: '#666',
-              lineHeight: '1.5',
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  color: '#333',
-                  fontSize: '16px',
-                }}
-              >
-                Step 3:
-              </span>
-            </div>
-            <div
-              style={{
-                color: '#999',
-                fontSize: '16px',
-              }}
-            >
-              2023-03-25
-            </div>
-            <div
-              style={{
-                color: '#666',
-                fontSize: '16px',
-              }}
-            >
-              Collect products that need a waitlist...
-            </div>
-          </div>
-          <div
-            style={{
-              margin: '20px 0',
-              fontSize: '14px',
-              color: '#666',
-              lineHeight: '1.5',
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  color: '#333',
-                  fontSize: '16px',
-                }}
-              >
-                Step 4:
-              </span>
-            </div>
-            <div
-              style={{
-                color: '#999',
-                fontSize: '16px',
-              }}
-            >
-              ...
-            </div>
-            <div
-              style={{
-                color: '#666',
-                fontSize: '16px',
-              }}
-            >
-              ...
-            </div>
-          </div>
+          <a href="https://chrome.google.com/webstore/detail/chatgpt-anywhere-chat-on/jcfkfnhebnhaldhlgfiaglpcjkdikbhc?hl=zh-CN&authuser=1">
+            <img src="/ad.png" alt="chrome" width={'200px'} />
+          </a>
         </div>
       </main>
     </>
