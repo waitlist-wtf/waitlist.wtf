@@ -131,13 +131,13 @@ export default function NewsLetterSignUpForm() {
         <input
           id="email-input"
           name="email"
-          placeholder="Your lovely ETH address"
+          placeholder="Your lovely ETH address,not required"
           ref={inputETHRef}
           autoCapitalize="off"
           autoCorrect="off"
           style={{
             height: '30px',
-            width: '250px',
+            width: '300px',
             textAlign: 'center',
             border: '1px solid #aaa',
           }}
