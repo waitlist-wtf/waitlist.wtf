@@ -3,24 +3,48 @@ import { toast } from 'react-hot-toast';
 
 export default function NewsLetterSignUpForm() {
   const inputRef = useRef(null);
-
+  const inputETHRef = useRef(null);
   const subscribeUser = async (e: any) => {
     e.preventDefault();
 
     // this is where your mailchimp request is made
     try {
-      const res = await fetch('/api/create2', {
-        body: JSON.stringify({
-          //@ts-ignore
-          email: inputRef.current.value,
-        }),
+      //@ts-ignore
+      if (!inputRef.current?.value && !inputETHRef.current?.value) {
+        toast.error('please input your email or ETH address');
+        return;
+      }
+      //@ts-ignore
+      if (inputRef.current?.value) {
+        const res = await fetch('/api/create2', {
+          body: JSON.stringify({
+            //@ts-ignore
+            email: inputRef.current.value,
+          }),
 
-        headers: {
-          'Content-Type': 'application/json',
-        },
+          headers: {
+            'Content-Type': 'application/json',
+          },
 
-        method: 'POST',
-      });
+          method: 'POST',
+        });
+      }
+      //@ts-ignore
+      //@ts-ignore
+      if (inputETHRef.current?.value) {
+        const res = await fetch('/api/wallet', {
+          body: JSON.stringify({
+            //@ts-ignore
+            address: inputETHRef.current.value,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+
+          method: 'POST',
+        });
+      }
+
       toast.success('You are now on the waitlist!');
     } catch (e: any) {
       toast.error('already on the waitlist');
@@ -79,11 +103,31 @@ export default function NewsLetterSignUpForm() {
         }}
       >
         <input
+          type="email"
           id="email-input"
           name="email"
-          placeholder="Your email or eth address"
+          placeholder="Your lovely email"
           ref={inputRef}
-          required
+          autoCapitalize="off"
+          autoCorrect="off"
+          style={{
+            height: '30px',
+            width: '250px',
+            textAlign: 'center',
+            border: '1px solid #aaa',
+          }}
+        />
+      </div>
+      <div
+        style={{
+          margin: '10px 0',
+        }}
+      >
+        <input
+          id="email-input"
+          name="email"
+          placeholder="Your lovely ETH address"
+          ref={inputETHRef}
           autoCapitalize="off"
           autoCorrect="off"
           style={{
