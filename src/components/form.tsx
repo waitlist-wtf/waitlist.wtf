@@ -42,14 +42,17 @@ export default function NewsLetterSignUpForm() {
           headers: {
             'Content-Type': 'application/json',
           },
-
           method: 'POST',
         });
+        const json = await res.json();
+        if (json.error) {
+          throw new Error(json.error);
+        }
       }
 
       toast.success('You are now on the waitlist!');
     } catch (e: any) {
-      toast.error('already on the waitlist');
+      toast.error(e.message);
     }
   };
   const [count, setCount] = useState(0);
