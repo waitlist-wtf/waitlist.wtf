@@ -79,17 +79,16 @@ export default function NewsLetterSignUpForm() {
         }}
       >
         <input
-          type="email"
           id="email-input"
           name="email"
-          placeholder="Your best email"
+          placeholder="Your email or eth address"
           ref={inputRef}
           required
           autoCapitalize="off"
           autoCorrect="off"
           style={{
             height: '30px',
-            width: '200px',
+            width: '250px',
             textAlign: 'center',
             border: '1px solid #aaa',
           }}
