@@ -1,3 +1,4 @@
+import { Button, Input } from '@nextui-org/react';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
@@ -104,10 +105,10 @@ export default function NewsLetterSignUpForm() {
       </label>
       <div
         style={{
-          margin: '10px 0',
+          margin: '20px 0',
         }}
       >
-        <input
+        <Input
           type="email"
           id="email-input"
           name="email"
@@ -116,10 +117,8 @@ export default function NewsLetterSignUpForm() {
           autoCapitalize="off"
           autoCorrect="off"
           style={{
-            height: '30px',
             width: '250px',
             textAlign: 'center',
-            border: '1px solid #aaa',
           }}
         />
       </div>
@@ -128,7 +127,7 @@ export default function NewsLetterSignUpForm() {
           margin: '10px 0',
         }}
       >
-        <input
+        <Input
           id="email-input"
           name="email"
           placeholder="Your lovely ETH address,not required"
@@ -136,10 +135,8 @@ export default function NewsLetterSignUpForm() {
           autoCapitalize="off"
           autoCorrect="off"
           style={{
-            height: '30px',
             width: '300px',
             textAlign: 'center',
-            border: '1px solid #aaa',
           }}
         />
       </div>
@@ -148,17 +145,18 @@ export default function NewsLetterSignUpForm() {
           margin: '30px 0',
         }}
       >
-        <button
+        <Button
           type="submit"
           value=""
           name="subscribe"
           style={{
-            height: '30px',
-            padding: '0 10px',
+            margin: '0 auto',
           }}
+          rounded
+          size="md"
         >
           Join the waitlist
-        </button>
+        </Button>
       </div>
     </form>
   );
