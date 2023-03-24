@@ -20,8 +20,8 @@ export default class NotionService {
 
     return response.results;
   }
-  async createWallet(address: string): Promise<any> {
-    const response = await this.client.pages.create({
+  async createWallet(address: string, email?: string): Promise<any> {
+    const page = {
       parent: {
         type: 'database_id',
         database_id: database,
@@ -35,7 +35,16 @@ export default class NotionService {
           },
         ],
       },
-    });
+    };
+    //@ts-ignore
+    page['properties']['Email'] = [
+      {
+        text: {
+          content: email,
+        },
+      },
+    ];
+    const response = await this.client.pages.create(page as any);
     return response;
   }
 }

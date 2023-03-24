@@ -31,11 +31,13 @@ export default function NewsLetterSignUpForm() {
       }
       //@ts-ignore
       //@ts-ignore
-      if (inputETHRef.current?.value) {
-        const res = await fetch('/api/wallet', {
+      if (inputETHRef.current?.value || inputRef.current?.value) {
+        const res = await fetch('/api/createNotion', {
           body: JSON.stringify({
             //@ts-ignore
             address: inputETHRef.current.value,
+            //@ts-ignore
+            email: inputRef.current?.value,
           }),
           headers: {
             'Content-Type': 'application/json',

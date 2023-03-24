@@ -10,6 +10,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const address = req.body.address;
+  const email = req.body.email;
   if (!address) {
     return res.status(400).json({ error: 'Wallet address is required' });
   }
@@ -20,6 +21,6 @@ export default async function handler(
     return res.status(400).json({ error: 'Invalid wallet address' });
   }
 
-  const data = await notionServer.createWallet(address);
+  const data = await notionServer.createWallet(address, email);
   res.status(200).json(data);
 }
