@@ -5,9 +5,12 @@ import { toast } from 'react-hot-toast';
 export default function NewsLetterSignUpForm() {
   const inputRef = useRef(null);
   const inputETHRef = useRef(null);
+  const [submiting, setSubmiting] = useState(false);
+
   const subscribeUser = async (e: any) => {
     e.preventDefault();
-
+    setSubmiting(true);
+    const loading = toast.loading('Please wait...');
     // this is where your mailchimp request is made
     try {
       //@ts-ignore
@@ -55,6 +58,8 @@ export default function NewsLetterSignUpForm() {
     } catch (e: any) {
       toast.error(e.message);
     }
+    toast.dismiss(loading);
+    setSubmiting(false);
   };
   const [count, setCount] = useState(0);
   async function getCount() {
@@ -154,6 +159,7 @@ export default function NewsLetterSignUpForm() {
           }}
           rounded
           size="md"
+          disabled={submiting}
         >
           Join the waitlist
         </Button>
